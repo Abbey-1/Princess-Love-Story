@@ -1,0 +1,1 @@
+Princess Love Story V2\n\nOptional music: create music/song.mp3.\nAdd future photos to images/ and we can expand the gallery.\nThis is a static HTML/CSS/JS site and can be published with GitHub Pages.
