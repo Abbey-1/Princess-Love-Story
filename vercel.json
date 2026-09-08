@@ -1,0 +1,38 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "next dev",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "env": [
+    {
+      "key": "NEXT_PUBLIC_FIREBASE_API_KEY",
+      "description": "Firebase API Key",
+      "value": ""
+    },
+    {
+      "key": "NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN",
+      "description": "Firebase Auth Domain",
+      "value": ""
+    },
+    {
+      "key": "NEXT_PUBLIC_FIREBASE_PROJECT_ID",
+      "description": "Firebase Project ID",
+      "value": ""
+    },
+    {
+      "key": "NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET",
+      "description": "Firebase Storage Bucket",
+      "value": ""
+    },
+    {
+      "key": "NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID",
+      "description": "Firebase Messaging Sender ID",
+      "value": ""
+    },
+    {
+      "key": "NEXT_PUBLIC_FIREBASE_APP_ID",
+      "description": "Firebase App ID",
+      "value": ""
+    }
+  ]
+}
