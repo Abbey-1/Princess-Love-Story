@@ -1,1 +1,78 @@
-const m=document.getElementById("music"),mb=document.getElementById("musicBtn");mb.onclick=async()=>{if(m.paused){try{await m.play();mb.textContent="❚❚ Pause"}catch(e){alert("Add your song as music/song.mp3 first.")}}else{m.pause();mb.textContent="♫ Music"}};document.getElementById("openLetter").onclick=()=>{document.getElementById("letterText").classList.remove("hidden");document.getElementById("openLetter").textContent="My heart is open ❤️"};document.getElementById("surprise").onclick=()=>{document.getElementById("message").classList.remove("hidden");document.getElementById("surprise").textContent="I knew it ❤️";for(let i=0;i<30;i++){let x=document.createElement("span");x.textContent=Math.random()>.5?"❤️":"💕";x.style.cssText=`position:fixed;left:${Math.random()*100}vw;bottom:-30px;font-size:${14+Math.random()*22}px;z-index:9;transition:3s`;document.body.append(x);requestAnimationFrame(()=>{x.style.transform=`translateY(-${300+Math.random()*500}px)`;x.style.opacity=0});setTimeout(()=>x.remove(),3200)}};
+// Music player
+const musicElement = document.getElementById("music");
+const musicBtn = document.getElementById("musicBtn");
+
+musicBtn.onclick = async () => {
+    if (musicElement.paused) {
+        try {
+            await musicElement.play();
+            musicBtn.textContent = "❚❚ Pause";
+        } catch (e) {
+            alert("Add your song as music.mp3 in the repository to play music!");
+        }
+    } else {
+        musicElement.pause();
+        musicBtn.textContent = "♫ Music";
+    }
+};
+
+// Surprise button
+document.getElementById("surprise").onclick = function() {
+    const message = document.getElementById("message");
+    message.classList.toggle("hidden");
+    
+    if (!message.classList.contains("hidden")) {
+        // Add some visual effects
+        message.style.animation = "fadeIn 0.5s ease-in";
+        
+        // Trigger falling hearts animation
+        createHearts();
+    }
+};
+
+// Create falling hearts animation
+function createHearts() {
+    for (let i = 0; i < 20; i++) {
+        const heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = "-50px";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        heart.style.pointerEvents = "none";
+        heart.style.zIndex = "9999";
+        heart.style.animation = "fall " + (Math.random() * 2 + 2) + "s ease-in forwards";
+        document.body.appendChild(heart);
+        
+        setTimeout(() => {
+            heart.remove();
+        }, 3000);
+    }
+}
+
+// Smooth scrolling for navigation (enhanced)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Add scroll animations for elements
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = "fadeIn 0.6s ease-in";
+        }
+    });
+});
+
+document.querySelectorAll('.section, .media-item, .grid article').forEach(el => {
+    observer.observe(el);
+});
