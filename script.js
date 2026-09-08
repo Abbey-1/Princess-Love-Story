@@ -16,6 +16,22 @@ musicBtn.onclick = async () => {
     }
 };
 
+// Runaway No button
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", function() {
+    const randomX = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const randomY = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+});
+
+noBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    return false;
+});
+
 // Surprise button
 document.getElementById("surprise").onclick = function() {
     const message = document.getElementById("message");
