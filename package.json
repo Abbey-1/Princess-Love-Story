@@ -1,7 +1,8 @@
 {
   "name": "princess-love-story",
   "version": "2.0.0",
-  "description": "A dynamic love story website",
+  "description": "A dynamic love story website with real-time messages",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -17,6 +18,9 @@
   },
   "devDependencies": {
     "eslint": "^8.0.0",
-    "eslint-config-next": "^14.0.0"
+    "eslint-config-next": "^14.0.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0"
   }
 }
