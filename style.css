@@ -297,6 +297,18 @@ main {
     color: #302229;
 }
 
+/* Button Container */
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    position: relative;
+    min-height: 60px;
+}
+
 /* Button */
 .btn {
     background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
@@ -307,12 +319,27 @@ main {
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 30px;
 }
 
 .btn:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(255, 20, 147, 0.4);
+}
+
+/* No Button */
+.btn-no {
+    position: fixed;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: not-allowed !important;
+    pointer-events: auto;
+    transition: none !important;
+}
+
+.btn-no:hover {
+    transform: none !important;
+    box-shadow: none !important;
 }
 
 /* Surprise section */
@@ -394,5 +421,9 @@ footer {
 
     .song-container iframe {
         height: 200px;
+    }
+
+    .button-container {
+        min-height: 100px;
     }
 }
